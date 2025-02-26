@@ -1,0 +1,44 @@
+
+// {
+//   "version": "0.2.0",
+//   "configurations": [
+//     {
+//       "name": "Debug with ts-node-dev",
+//       "type": "node",
+//       "request": "launch",
+//       "runtimeExecutable": "npx",
+//       "runtimeArgs": [
+//         "ts-node-dev",
+//         "--respawn",
+//         "--transpile-only",
+//         "--ignore-watch", "node_modules",
+//         "--no-notify"
+//       ],
+//       "args": [
+//         "${workspaceFolder}/src/index.ts"
+//       ],
+//       "protocol": "inspector",
+//       "console": "integratedTerminal",
+//       "internalConsoleOptions": "neverOpen",
+//       "skipFiles": [
+//         "<node_internals>/**"
+//       ]
+//     }
+//   ]
+// }
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Attach to Node.js",
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "restart": true,
+      "protocol": "inspector",
+      "remoteRoot": "/workspace",
+      "localRoot": "${workspaceFolder}",
+      "skipFiles": ["<node_internals>/**"]
+    }
+  ]
+}

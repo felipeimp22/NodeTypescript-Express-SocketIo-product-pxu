@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+      - "3002:3002"
+    environment:
+      NODE_ENV: production
+    depends_on:
+      - mongo
+
+  mongo:
+    container_name: mongo-container
+    image: mongo:latest
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongoadmin
+      - MONGO_INITDB_ROOT_PASSWORD=mongoRoot
+
+volumes:
+  mongo_data:
