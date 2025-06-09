@@ -1,4 +1,4 @@
-# Project pixel union Documentation
+# Project Documentation
 
 ## Running the Project in a DevContainer
 
